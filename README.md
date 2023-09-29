@@ -1,7 +1,7 @@
-# Project Name: Task Validator
+# Project Name: Task Coordinator
 
 ## Description
-Task Validator is a tool that facilitates the process of coordinating tasks via email based on a list of confirmations. It streamlines the task confirmation process and ensures efficient communication among team members.
+Task Coordinator is a tool that facilitates the process of coordinating tasks via email based on a list of confirmations. It streamlines the task confirmation process and ensures efficient communication among team members.
 
 ## Installation
 To install the iOS application, follow these steps:
@@ -14,12 +14,10 @@ To install the iOS application, follow these steps:
 - [Mobile Application Repository](https://github.com/fpmi-hci-2023/project13b-mobile-chatgpt): Here you can find the codebase for the mobile application, which complements the iOS version with specific features.
 
 ## Usage
-After installing Task Validator, you can perform the following actions:
+After installing Task Coordinator, you can perform the following actions:
 1. Open the application on your iOS device.
 2. Log in with your credentials or create a new account.
 3. Browse the list of tasks and confirm or reject them as needed.
-
-![Task Validator Screenshot](screenshot.png)
 
 ## Contributing
 This project was developed by the following contributors:
