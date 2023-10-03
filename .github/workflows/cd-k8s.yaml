@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   build_and_push:
-    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/docker_build_and_push.yaml@main"
+    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/docker_build_and_publish.yaml@main"
     with:
       name: servicediscovery
       build_src: ${{ github.event.inputs.build_src }}
