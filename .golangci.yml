@@ -37,7 +37,6 @@ linters:
     - dupl
     - errcheck
     - funlen
-    - fieldalignment
     - gochecknoglobals
     - gochecknoinits
     - gocognit
