@@ -136,8 +136,8 @@ jobs:
           cache-to: type=gha,mode=max
           file: ${{ inputs.docker_file }}
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ github.repository_name }}:latest
-            ghcr.io/${{ github.repository_owner }}/${{ github.repository_name }}:${{ steps.git_info.outputs.date }}-${{ steps.git_info.outputs.short_sha }}
+            ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
+            ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ steps.git_info.outputs.date }}-${{ steps.git_info.outputs.short_sha }}
           build-args: |
             GO_VERSION=${{ inputs.go_version }}
             GITHUB_TOKEN=${{ secrets.gh_sudo_token }}
