@@ -6,7 +6,7 @@ on:
       build_src:
         description: "Src version to build. For GitTag: \"tag:[name]\", For GitBranch: \"branch:[name]\", For GitCommit: \"commit:[hash]\", For EcrTag: \"ecr:[tag]\", For PullRequest: \"pr:[number]\""
         required: false
-        default: 'branch:master'
+        default: 'branch:main'
 
 permissions:
   deployments: write
@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   build_and_push:
-    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/docker_build_and_push.yaml@master"
+    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/docker_build_and_push.yaml@main"
     with:
       name: servicediscovery
       build_src: ${{ github.event.inputs.build_src }}
