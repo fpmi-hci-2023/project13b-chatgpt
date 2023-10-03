@@ -12,7 +12,7 @@ jobs:
   codeql:
     uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/codeql.yaml@main"
   lint:
-    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/lint.yaml@main"
+    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/golangci_lint.yaml@main"
     secrets:
       gh_sudo_token: ${{ secrets.GH_SUDO_TOKEN }}
   build:
