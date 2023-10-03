@@ -13,11 +13,6 @@ name: "CodeQL"
 
 on:
   workflow_call:
-    inputs:
-      languages:
-        description: "Languages to analyze"
-        type: string
-        default: "go"
 
   schedule:
     - cron: '34 14 * * 0'
