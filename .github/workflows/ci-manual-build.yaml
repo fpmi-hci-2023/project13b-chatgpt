@@ -8,11 +8,11 @@ permissions:
 
 jobs:
   lint:
-    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/lint.yaml@latest"
+    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/lint.yaml@master"
     secrets:
       gh_sudo_token: ${{ secrets.GH_SUDO_TOKEN }}
   build_and_push:
-    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/docker_build_and_push.yaml@latest"
+    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/docker_build_and_push.yaml@master"
     with:
       env: dev
       name: sampleservice
