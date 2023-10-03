@@ -1,0 +1,23 @@
+name: Deployment - Dev
+
+on:
+  workflow_dispatch: # manual trigger
+    inputs:
+      build_src:
+        description: "Src version to build. For GitTag: \"tag:[name]\", For GitBranch: \"branch:[name]\", For GitCommit: \"commit:[hash]\", For EcrTag: \"ecr:[tag]\", For PullRequest: \"pr:[number]\""
+        required: false
+        default: 'branch:master'
+
+permissions:
+  deployments: write
+  id-token: write
+  contents: read
+
+jobs:
+  build_and_push:
+    uses: "plato-app/github_actions/.github/workflows/docker_build_and_push.yaml@v2"
+    with:
+      name: servicediscovery
+      build_src: ${{ github.event.inputs.build_src }}
+    secrets:
+      gh_sudo_token: ${{ secrets.GH_SUDO_TOKEN }}
