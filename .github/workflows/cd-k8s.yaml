@@ -1,4 +1,4 @@
-name: Deployment - Dev
+name: Deployment - k8s
 
 on:
   workflow_dispatch: # manual trigger
