@@ -9,7 +9,7 @@ on:
         default: '1.21.1'
     secrets:
       gh_sudo_token:
-      required: true
+        required: true
 
 jobs:
   lint:

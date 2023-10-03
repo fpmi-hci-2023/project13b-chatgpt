@@ -21,7 +21,7 @@ on:
         default: Dockerfile
     secrets:
       gh_sudo_token:
-      required: true
+        required: true
     outputs:
       image_tag:
         description: "Docker image tag from build"
