@@ -13,12 +13,6 @@ name: "CodeQL"
 
 on:
   workflow_call:
-    inputs:
-      languages:
-        description: "Languages to analyze"
-        type: string
-        required: true
-        default: "go"
 
   schedule:
     - cron: '34 14 * * 0'
@@ -41,7 +35,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ${{ inputs.build_src }}
+        language: [ 'go' ]
         # CodeQL supports [ 'c-cpp', 'csharp', 'go', 'java-kotlin', 'javascript-typescript', 'python', 'ruby', 'swift' ]
         # Use only 'java-kotlin' to analyze code written in Java, Kotlin or both
         # Use only 'javascript-typescript' to analyze code written in JavaScript, TypeScript or both
