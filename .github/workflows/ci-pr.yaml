@@ -10,12 +10,12 @@ permissions:
 
 jobs:
   codeql:
-    uses: "plato-app/github_actions/.github/workflows/codeql.yaml"
+    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/codeql.yaml@latest"
   lint:
-    uses: "plato-app/github_actions/.github/workflows/lint.yaml"
+    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/lint.yaml@latest"
     secrets:
       gh_sudo_token: ${{ secrets.GH_SUDO_TOKEN }}
   build:
-    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/docker_build.yaml"
+    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/docker_build.yaml@latest"
     secrets:
       gh_sudo_token: ${{ secrets.GH_SUDO_TOKEN }}

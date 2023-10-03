@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   build_and_push:
-    uses: "plato-app/github_actions/.github/workflows/docker_build_and_push.yaml@v2"
+    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/docker_build_and_push.yaml@latest"
     with:
       name: servicediscovery
       build_src: ${{ github.event.inputs.build_src }}
