@@ -27,5 +27,5 @@ func main() {
 	}()
 
 	<-ctx.Done()
-	slog.Info("exiting")
+	slog.Info("exiting now")
 }
