@@ -1,0 +1,19 @@
+name: Build - Manual
+concurrency: dev
+on:
+  workflow_dispatch: # manual trigger
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  lint:
+    uses: "plato-app/github_actions/.github/workflows/lint.yaml"
+    secrets:
+      gh_sudo_token: ${{ secrets.GH_SUDO_TOKEN }}
+  build_and_push:
+    uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/docker_build_and_push.yaml"
+    with:
+      env: dev
+      name: sampleservice
+    secrets:
+      gh_sudo_token: ${{ secrets.GH_SUDO_TOKEN }}
