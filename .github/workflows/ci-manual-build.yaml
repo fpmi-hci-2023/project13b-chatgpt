@@ -5,6 +5,9 @@ on:
 permissions:
   id-token: write
   contents: read
+  actions: read
+  security-events: write
+  packages: write
 
 jobs:
   lint:

@@ -12,6 +12,7 @@ permissions:
   deployments: write
   id-token: write
   contents: read
+  packages: write
 
 jobs:
   build_and_push:
