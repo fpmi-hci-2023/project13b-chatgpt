@@ -17,7 +17,6 @@ on:
       languages:
         description: "Languages to analyze"
         type: string
-        required: true
         default: "go"
 
   schedule:

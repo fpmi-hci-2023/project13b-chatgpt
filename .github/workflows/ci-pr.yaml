@@ -12,6 +12,8 @@ permissions:
 jobs:
   codeql:
     uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/codeql.yaml@main"
+    with:
+      languages: go
   lint:
     needs: codeql
     uses: "fpmi-hci-2023/project13b-chatgpt/.github/workflows/golangci_lint.yaml@main"
