@@ -35,8 +35,8 @@ jobs:
         uses: azure/k8s-set-context@v3
         with:
           method: service-account
-          k8s-url: ${{ secrets.kubernetes_url }}
-          k8s-secret: ${{ secrets.kubernetes_secret }}
+          k8s-url: ${{ secrets.KUBERNETES_URL }}
+          k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
       - name: Set up Helm
         uses: azure/setup-helm@v1
         with:
