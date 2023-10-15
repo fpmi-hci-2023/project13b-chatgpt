@@ -9,6 +9,10 @@ on:
     secrets:
       gh_sudo_token:
         required: true
+      kubernetes_secret:
+        required: true
+      kubernetes_url:
+        required: true
 
 jobs:
   deploy:
@@ -31,8 +35,8 @@ jobs:
         uses: azure/k8s-set-context@v3
         with:
           method: service-account
-          k8s-url: ${{ secrets.KUBERNETES_URL }}
-          k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
+          k8s-url: ${{ secrets.kubernetes_url }}
+          k8s-secret: ${{ secrets.kubernetes_secret }}
       - name: Set up Helm
         uses: azure/setup-helm@v1
         with:
@@ -43,6 +47,6 @@ jobs:
         run: helm repo update
       - name: Deploy Helm Chart
         run: |
-          helm upgrade --install ${{ inputs.serviceName }}-helm ./charts/${{ inputs.serviceName }} --namespace hci-helm \
+          helm upgrade --install ${{ inputs.serviceName }}-helm ./helm-charts/${{ inputs.serviceName }} --namespace hci-helm \
           --set image.repository=ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }} \
           --set image.tag=latest
