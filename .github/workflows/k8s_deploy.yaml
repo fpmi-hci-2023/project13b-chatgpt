@@ -20,11 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git Fetch
-        if: steps.build_src.outputs.run_build == 'true'
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          ref: ${{ steps.build_src.outputs.git_ref }}
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
