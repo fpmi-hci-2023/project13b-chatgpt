@@ -45,10 +45,8 @@ jobs:
         run: helm repo add stable https://charts.helm.sh/stable
       - name: Update Helm Repo
         run: helm repo update
-      - name: ls
-        run: sudo ls -Rla
       - name: Deploy Helm Chart
         run: |
-          helm upgrade --install ${{ inputs.serviceName }}-helm ./helm-charts/${{ inputs.serviceName }} --namespace hci-helm \
+          helm upgrade --install ${{ inputs.serviceName }}-helm ./charts/${{ inputs.serviceName }} --namespace hci-helm \
           --set image.repository=ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }} \
           --set image.tag=latest
