@@ -47,6 +47,6 @@ jobs:
         run: helm repo update
       - name: Deploy Helm Chart
         run: |
-          helm upgrade --install ${{ inputs.serviceName }}-helm ./charts/${{ inputs.serviceName }} --namespace hci-helm \
+          helm upgrade --install ${{ inputs.serviceName }}-helm charts/${{ inputs.serviceName }} --namespace hci-helm \
           --set image.repository=ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }} \
           --set image.tag=latest
